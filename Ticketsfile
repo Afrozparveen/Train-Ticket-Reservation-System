@@ -14,7 +14,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
-               deploy adapters: [tomcat9(credentialsId: '0408fc78-ef46-4d47-b83a-df6d19ca27a2', path: '', url: 'http://65.2.150.127:8080/')], contextPath: 'tickets', war: '**/*.war'
+               deploy adapters: [tomcat9(credentialsId: '0408fc78-ef46-4d47-b83a-df6d19ca27a2', path: '', url: 'http://65.2.150.127:8080/')], contextPath: 'webtickets', war: '**/*.war'
             }
         }
     }
