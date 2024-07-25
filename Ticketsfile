@@ -17,5 +17,13 @@ pipeline {
                deploy adapters: [tomcat9(credentialsId: '0408fc78-ef46-4d47-b83a-df6d19ca27a2', path: '', url: 'http://65.2.150.127:8080/')], contextPath: 'webtickets', war: '**/*.war'
             }
         }
+        stage('sonar') {
+            steps {
+               mvn sonar:sonar \
+  -Dsonar.projectKey=sonar \
+  -Dsonar.host.url=http://13.201.131.179:9000 \
+  -Dsonar.login=e5bb3fcfef75addd6c00a2138f1958771de8fca1
+            }
+        }
     }
 }
