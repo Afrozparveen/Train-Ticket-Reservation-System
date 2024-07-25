@@ -19,10 +19,10 @@ pipeline {
         }
         stage('sonar') {
             steps {
-               mvn sonar:sonar \
+               sh 'mvn sonar:sonar \
   -Dsonar.projectKey=sonar \
   -Dsonar.host.url=http://13.201.131.179:9000 \
-  -Dsonar.login=e5bb3fcfef75addd6c00a2138f1958771de8fca1
+  -Dsonar.login=e5bb3fcfef75addd6c00a2138f1958771de8fca1'
             }
         }
     }
